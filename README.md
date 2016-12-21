@@ -4,8 +4,8 @@
 
 Massive thanks to [dolanmiu](https://github.com/dolanmiu) for the
 [grunt-google-translate](https://github.com/dolanmiu/grunt-google-translate)
-that this is heavily based off of. It was created to leverage Microsoft's
-[Translator API](https://www.microsoft.com/en-us/translator/getstarted.aspx)
+that this is heavily based off of. It was created to leverage
+[Microsoft's Translator API](https://www.microsoft.com/en-us/translator/getstarted.aspx)
 which has the benefit of having a free tier.
 
 ## Getting Started
