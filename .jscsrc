@@ -1,0 +1,5 @@
+{
+  "preset": "airbng",
+  "maximumLineLength": 120,
+  "esnext": true
+}
