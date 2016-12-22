@@ -131,7 +131,7 @@ module.exports = function(grunt) {
           grunt.log.writeln('Writing translated file');
           _.forEach(translatedJsons, function(translatedJson) {
             const revertedJson = revertVariablesInJson(translatedJson.json);
-            grunt.file.write(translatedJson.dest, JSON.stringify(revertedJson, null, '  '));
+            grunt.file.write(translatedJson.dest, JSON.stringify(revertedJson, null, 2) + '\n');
             grunt.log.writeln('Wrote translated file: ' + translatedJson.dest);
           });
 

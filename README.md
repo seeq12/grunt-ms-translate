@@ -2,9 +2,8 @@
 
 > A build task to translate JSON files to other languages using Microsoft's Translation API. Pairs very well with angular-translate.
 
-Massive thanks to [dolanmiu](https://github.com/dolanmiu) for the
-[grunt-google-translate](https://github.com/dolanmiu/grunt-google-translate)
-that this is heavily based off of. It was created to leverage
+
+It was created to automatically translate JSON translation files by leveraging
 [Microsoft's Translator API](https://www.microsoft.com/en-us/translator/getstarted.aspx)
 which has the benefit of having a free tier.
 
@@ -90,8 +89,15 @@ grunt.initConfig({
 });
 ```
 
+## Contributors
+Many thanks to [dolanmiu](https://github.com/dolanmiu) for the
+[grunt-google-translate](https://github.com/dolanmiu/grunt-google-translate)
+that this is heavily based off of.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+* 1.0.1 - Add newline to end of translated files
+* 1.0.0 - Initial Release
