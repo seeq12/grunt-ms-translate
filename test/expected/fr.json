@@ -1,0 +1,13 @@
+{
+  "A": "Un",
+  "B": "Deux",
+  "C": "Trois",
+  "D": "Quatre",
+  "E": "Cinq",
+  "F": "Six",
+  "G": "Sept",
+  "H": "Huit",
+  "I": "Neuf",
+  "FAILURE": "Erreur d’obtention de data{hasError, select, true{: {message}} other{}}. Cliquez ici pour réessayer",
+  "SUCCESS": "{COUNT} succès"
+}

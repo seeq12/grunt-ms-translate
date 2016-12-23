@@ -27,22 +27,22 @@ exports.ms_translate = {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  default_options_french: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    const actual = grunt.file.read('tmp/fr.json');
+    const expected = grunt.file.read('test/expected/fr.json');
+    test.equal(actual, expected, 'all 11 english keys should be translated into french, except for variables');
 
     test.done();
   },
-  custom_options: function(test) {
+  default_options_russian: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    const actual = grunt.file.read('tmp/ru.json');
+    const expected = grunt.file.read('test/expected/ru.json');
+    test.equal(actual, expected, 'all 11 english keys should be translated into russian, except for variables');
 
     test.done();
-  },
+  }
 };
