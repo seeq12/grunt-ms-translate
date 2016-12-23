@@ -114,7 +114,7 @@ module.exports = function(grunt) {
       _.chain(this.files)
         .map(function(file) {
           file.prefix = file.prefix || '';
-          file.suffix = file.suffix || /.+(\..+)/.exec(file.src)[1];
+          file.suffix = file.suffix || _.last(/.+(\..+)/.exec(file.src));
 
           const languageJson = JSON.parse(grunt.file.read(file.src));
           const variableSafeJson = createVariableSafeJson(languageJson);
