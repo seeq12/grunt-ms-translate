@@ -19,7 +19,8 @@ module.exports = function(grunt) {
         '<%= nodeunit.tests %>'
       ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        reporterOutput: ''
       }
     },
 
@@ -32,19 +33,14 @@ module.exports = function(grunt) {
     ms_translate: {
       default_options: {
         options: {
+          msApiKey: process.env.MS_API_KEY
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        files: [{
+          src: 'test/fixtures/en.json',
+          sourceLanguage: 'en',
+          targetLanguages: ['fr', 'ru'],
+          dest: 'tmp/'
+        }]
       }
     },
 

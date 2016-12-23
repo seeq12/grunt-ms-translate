@@ -1,7 +1,7 @@
 {
   "name": "grunt-ms-translate",
   "description": "A build task to translate JSON files to other languages using Microsoft's Translation API. Pairs very well with angular-translate.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/seeq12/grunt-ms-translate",
   "author": {
     "name": "Jason Rust",
@@ -40,5 +40,10 @@
     "angular",
     "translations",
     "grunt"
-  ]
+  ],
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "lodash": "^4.17.2",
+    "mstranslator": "^2.1.0"
+  }
 }
