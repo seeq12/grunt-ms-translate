@@ -58,16 +58,21 @@ grunt.initConfig({
 ```
 
 #### Full Example
-In this example, two files are being translated, one called ```locale-en.json``` and another called ```locale-fr.json```. They are in different folders, and will create translated files in the same ```i18n/``` folder.
+In this example, two files are being translated, one called
+```locale-en.json``` and another called ```locale-fr.json``` and the
+`serializeRequests` flag is enabled. They are in different folders, and will create
+translated files in the same ```i18n/``` folder.
 
-Notice how the prefix and suffix is specified, it means the translated files will be named like ```locale-de.json``` instead of ```de.json```.
+Notice how the prefix and suffix is specified, it means the translated files
+will be named like ```locale-de.json``` instead of ```de.json```.
 
 ```js
 grunt.initConfig({
     ms_translate: {
         default_options: {
             options: {
-                msApiKey: YOUR_API_KEY_HERE
+                msApiKey: YOUR_API_KEY_HERE,
+                serializeRequests: true // Serializes each request to the API; slower, but can avoid rate limit errors on free tier
             },
             files: [{
                 src: '<%= yeoman.client %>/i18n/locale-en.json',

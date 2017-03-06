@@ -41,6 +41,18 @@ module.exports = function(grunt) {
           targetLanguages: ['fr', 'ru'],
           dest: 'tmp/'
         }]
+      },
+      serialized: {
+        options: {
+          msApiKey: process.env.MS_API_KEY,
+          serializeRequests: true
+        },
+        files: [{
+          src: 'test/fixtures/en.json',
+          sourceLanguage: 'en',
+          targetLanguages: ['de'],
+          dest: 'tmp/'
+        }]
       }
     },
 

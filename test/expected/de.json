@@ -1,0 +1,13 @@
+{
+  "A": "Eine",
+  "B": "Zwei",
+  "C": "Drei",
+  "D": "Vier",
+  "E": "Fünf",
+  "F": "Sechs",
+  "G": "Sieben",
+  "H": "Acht",
+  "I": "Neun",
+  "FAILURE": "Fehler beim Abrufen des data{hasError, select, true{: {message}} other{}}. Klicken Sie auf wiederholen",
+  "SUCCESS": "Erfolg {COUNT}"
+}
