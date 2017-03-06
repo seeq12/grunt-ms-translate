@@ -44,5 +44,14 @@ exports.ms_translate = {
     test.equal(actual, expected, 'all 11 english keys should be translated into russian, except for variables');
 
     test.done();
+  },
+  serialized_german: function(test) {
+    test.expect(1);
+
+    const actual = grunt.file.read('tmp/de.json');
+    const expected = grunt.file.read('test/expected/de.json');
+    test.equal(actual, expected, 'all 11 english keys should be translated into german, except for variables');
+
+    test.done();
   }
 };
