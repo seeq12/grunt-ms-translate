@@ -32,6 +32,14 @@ Default value: `',  '`
 
 The API key used to access [Microsoft's Translation API](https://www.microsoft.com/en-us/translator/getstarted.aspx).
 
+#### options.serializeRequests
+Type: `Boolean`
+Default value: `false`
+
+Will translate each chunk of the file only after the previous chunk has
+finished. Slows the task down but can mitigate API errors relating to rate
+limit, especially on the free tier.
+
 ### Usage Examples
 
 #### Simple Example
