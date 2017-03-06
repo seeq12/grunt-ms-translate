@@ -72,7 +72,7 @@ function revertVariablesInJson(translatedJson) {
   return sourceJson;
 }
 
-function translate(origJson, translateArray, source, target, destPath, grunt) {
+function translate(origJson, translateArray, source, target, destPath, serializeRequests, grunt) {
   const jsonReferenceArray = [];
   const sourceJson = _.cloneDeep(origJson);
 
@@ -88,8 +88,14 @@ function translate(origJson, translateArray, source, target, destPath, grunt) {
   return _.chain(jsonReferenceArray)
     .map('value')
     .chunk(MAX_TRANSLATE_ELEMENTS)
-    .map((translateChunk) => translateArray({ texts: translateChunk, from: source, to: target }))
-    .thru(Promise.all)
+    .thru(translateChunks => {
+      if (serializeRequests) {
+        return _.reduce(translateChunks, (p, translateChunk) => p.then((translatedChunks) => translateArray({ texts: translateChunk, from: source, to: target })
+          .then(chunks => translatedChunks.concat(chunks))), Promise.resolve([]));
+      } else {
+        return Promise.all(_.map(translateChunks, (translateChunk) => translateArray({ texts: translateChunk, from: source, to: target })));
+      }
+    })
     .value()
     .then((translatedChunks) => {
       const translations = _.flatten(translatedChunks);
@@ -110,6 +116,7 @@ module.exports = function(grunt) {
       const MsTranslator = require('mstranslator');
       const msTranslate = new MsTranslator({ api_key: this.options().msApiKey }, true);
       const translateArray = Promise.promisify(msTranslate.translateArray, { context: msTranslate });
+      const serializeRequests = this.options().serializeRequests;
 
       _.chain(this.files)
         .map(function(file) {
@@ -121,7 +128,7 @@ module.exports = function(grunt) {
 
           return _.map(file.targetLanguages, function(targetLanguage) {
             const filePath = file.dest + file.prefix + targetLanguage + file.suffix;
-            return translate(variableSafeJson, translateArray, file.sourceLanguage, targetLanguage, filePath, grunt);
+            return translate(variableSafeJson, translateArray, file.sourceLanguage, targetLanguage, filePath, serializeRequests, grunt);
           });
         })
         .flatten()

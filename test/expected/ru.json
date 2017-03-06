@@ -8,6 +8,6 @@
   "G": "Семь",
   "H": "Восемь",
   "I": "Девять",
-  "FAILURE": "Ошибка при получении data{hasError, select, true{: {message}} other{}}. Щелкните, чтобы повторить попытку",
+  "FAILURE": "Ошибка при получении data{hasError, select, true{: {message}} other{}}. Щелкните, чтобы повторить",
   "SUCCESS": "Успех {COUNT}"
 }
