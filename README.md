@@ -112,6 +112,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 1.1.0 - Add new `serializeRequests` parameter
 * 1.0.2 - Add the dependencies needed by the package
 * 1.0.1 - Add newline to end of translated files
 * 1.0.0 - Initial Release
